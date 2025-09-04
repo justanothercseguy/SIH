@@ -1,204 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login & Sign Up</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .form-container {
-            transition: all 0.5s ease-in-out;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login & Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+    .form-container {
+      transition: all 0.5s ease-in-out;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
-
-    <div class="relative flex flex-col md:flex-row w-full h-screen bg-white overflow-hidden">
-    
+  <div class="relative flex flex-col md:flex-row w-full h-screen bg-white overflow-hidden">
     <!-- Left Side - Decorative Panel -->
-<div class="hidden md:flex flex-col items-center justify-center w-2/3 p-12 text-center relative overflow-hidden"
-     style="background-image: url('images/login.jpg');  
-            background-repeat: no-repeat; 
-            background-size: cover; 
-            background-position: center;">
+    <div
+      class="hidden md:flex flex-col items-center justify-center w-2/3 p-12 text-center relative overflow-hidden"
+      style="
+        background-image: url('images/login.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      "
+    ></div>
 
+    <!-- Right Side - Form Container -->
+    <div
+      class="w-full md:w-1/2 p-10 md:p-12 bg-purple-200 flex flex-col justify-center relative"
+    >
+      <!-- Language Switcher -->
+      <div class="absolute top-4 right-4">
+        <select
+          id="language-switcher"
+          class="px-3 py-2 rounded-lg border bg-white text-gray-700"
+        >
+          <option value="en">English</option>
+          <option value="hi">हिंदी</option>
+          <option value="od">ଓଡ଼ିଆ</option>
+        </select>
+      </div>
 
-</div>
-        <!-- Right Side - Form Container -->
-        <div class="w-full md:w-1/2 p-10 md:p-12 bg-purple-200 flex flex-col justify-center">
-
-            <!-- Login Form -->
-            <div id="login-form" class="form-container">
-                <div class="text-center mb-8">
-                    <h2 class="flex items-center justify-center text-3xl font-bold text-gray-800 border rounded-2xl bg-purple-400 border-gray-500 w-full rounded-full  h-12 text-center">Welcome back!</h2>
-                    <p class="text-gray-500 mt-2">Please enter your details</p>
-                </div>
-
-                <form>
-                    <div class="mb-4">
-                        <label for="login-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" id="login-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email">
-                    </div>
-
-                    <div class="mb-4 relative">
-                        <label for="login-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                        <input type="password" id="login-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password">
-                        <span class="absolute inset-y-0 right-0 pr-3 flex items-center pt-6 cursor-pointer" onclick="togglePasswordVisibility('login-password')">
-                            <i data-feather="eye" class="h-5 w-5 text-gray-400"></i>
-                        </span>
-                    </div>
-
-                    <div class="flex items-center justify-between mb-6">
-                        <div class="flex items-center">
-                            <input type="checkbox" id="remember" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                            <label for="remember" class="ml-2 block text-sm text-gray-900">Remember for 30 days</label>
-                        </div>
-                        <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-500">Forgot password?</a>
-                    </div>
-
-                    <button type="submit" onclick="goToHomePage(event)" class="w-full bg-gray-800 text-white py-3 rounded-full font-semibold hover:bg-gray-900 transition duration-300">Login</button>
-
-                    <button type="button" class="w-full flex items-center justify-center mt-4 bg-white border border-gray-300 text-gray-700 py-3 rounded-full font-semibold hover:bg-gray-50 transition duration-300">
-                        <svg class="w-5 h-5 mr-2" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M44.5 24.3H24v8.5h11.8c-1.7 5.4-6.8 9.2-12.8 9.2-7.6 0-13.8-6.2-13.8-13.8s6.2-13.8 13.8-13.8c3.5 0 6.7 1.3 9.2 3.5l6.5-6.5C39.1 5.4 32.1 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11.1 0 20.1-8.5 22.5-20.2z" fill="#4285F4"/><path d="M44.5 24.3H24v8.5h11.8c-1.7 5.4-6.8 9.2-12.8 9.2-7.6 0-13.8-6.2-13.8-13.8s6.2-13.8 13.8-13.8c3.5 0 6.7 1.3 9.2 3.5l6.5-6.5C39.1 5.4 32.1 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11.1 0 20.1-8.5 22.5-20.2z" fill="url(#paint0_linear)"></path><defs><linearGradient id="paint0_linear" x1="26.7" y1="36" x2="26.7" y2="40.8" gradientUnits="userSpaceOnUse"><stop stop-color="#3C79E6" stop-opacity="0"/><stop offset="1" stop-color="#3C79E6"/></linearGradient></defs></svg>
-                        Log in with Google
-                    </button>
-                </form>
-
-                <p class="text-center text-sm text-gray-500 mt-8">
-                    Don't have an account? <a href="#" id="show-signup" class="font-semibold text-blue-600 hover:text-blue-500">Sign up</a>
-                </p>
-            </div>
-
-            <!-- Signup Form -->
-            <div id="signup-form" class="form-container hidden">
-                <div class="text-center mb-6">
-                    <h2 class="flex items-center justify-center border rounded-2xl bg-purple-400 border-gray-500 rounded-full w-full  h-12 text-center text-3xl font-bold text-gray-800">Create an account</h2>
-                    <p class="text-gray-500 mt-2">Please enter your details</p>
-                </div>
-
-                <div class="flex justify-center mb-6">
-                    <button id="student-btn" class="role-btn bg-gray-800 text-white px-6 py-2 rounded-lg mr-2 transition">Student</button>
-                    <button id="teacher-btn" class="role-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-lg transition">Teacher</button>
-                </div>
-
-                <form>
-                    <div class="mb-4">
-                        <label for="signup-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" id="signup-email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email">
-                    </div>
-
-                    <div class="mb-4 relative">
-                        <label for="signup-password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-                        <input type="password" id="signup-password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Create a password">
-                         <span class="absolute inset-y-0 right-0 pr-3 flex items-center pt-6 cursor-pointer" onclick="togglePasswordVisibility('signup-password')">
-                            <i data-feather="eye" class="h-5 w-5 text-gray-400"></i>
-                        </span>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="signup-name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                        <input type="text" id="signup-name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your full name">
-                    </div>
-
-                    <div id="student-fields">
-                        <div class="mb-4">
-                            <label for="signup-class" class="block text-sm font-medium text-gray-700 mb-1">Class</label>
-                            <input type="text" id="signup-class" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="e.g., Grade 10">
-                        </div>
-                        <div class="mb-4">
-            <label for="student-language" class="block text-sm font-medium text-gray-700 mb-1">Preferred Language</label>
-            <select id="student-language"
-              class="w-full px-3 py-3 border border-gray-300 rounded-lg bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-purple-500">
-              <option value="en"> English</option>
-              <option value="hi"> हिंदी</option>
-              <option value="od"> ଓଡ଼ିଆ</option>
-              
-            </select>
-          </div>
-                    </div>
-
-                    <button type="submit" class="w-full bg-gray-800 text-white py-3 rounded-full font-semibold hover:bg-gray-900 transition duration-300 mt-4">Sign up</button>
-                </form>
-
-                <p class="text-center text-sm text-gray-500 mt-8">
-                    Already have an account? <a href="#" id="show-login" class="font-semibold text-blue-600 hover:text-blue-500">Log in</a>
-                </p>
-            </div>
+      <!-- Login Form -->
+      <div id="login-form" class="form-container">
+        <div class="text-center mb-8">
+          <h2
+            id="login-title"
+            class="flex items-center justify-center text-3xl font-bold text-gray-800 border rounded-2xl bg-purple-400 border-gray-500 w-full rounded-full h-12 text-center"
+          >
+            Welcome back!
+          </h2>
+          <p id="login-subtitle" class="text-gray-500 mt-2">
+            Please enter your details
+          </p>
         </div>
+
+        <form>
+          <div class="mb-4">
+            <label
+              for="login-email"
+              id="label-email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="login-email"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div class="mb-4 relative">
+            <label
+              for="login-password"
+              id="label-password"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="login-password"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your password"
+            />
+            <span
+              class="absolute inset-y-0 right-0 pr-3 flex items-center pt-6 cursor-pointer"
+              onclick="togglePasswordVisibility('login-password')"
+            >
+              <i data-feather="eye" class="h-5 w-5 text-gray-400"></i>
+            </span>
+          </div>
+
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center">
+              <input
+                type="checkbox"
+                id="remember"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              />
+              <label
+                for="remember"
+                id="remember-text"
+                class="ml-2 block text-sm text-gray-900"
+                >Remember for 30 days</label
+              >
+            </div>
+            <a
+              href="#"
+              id="forgot-password"
+              class="text-sm font-medium text-blue-600 hover:text-blue-500"
+              >Forgot password?</a
+            >
+          </div>
+
+          <button
+            type="submit"
+            onclick="goToHomePage(event)"
+            id="login-btn"
+            class="w-full bg-gray-800 text-white py-3 rounded-full font-semibold hover:bg-gray-900 transition duration-300"
+          >
+            Login
+          </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-500 mt-8">
+          <span id="no-account">Don't have an account?</span>
+          <a
+            href="#"
+            id="show-signup"
+            class="font-semibold text-blue-600 hover:text-blue-500"
+            >Sign up</a
+          >
+        </p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="form-container hidden">
+        <div class="text-center mb-6">
+          <h2
+            id="signup-title"
+            class="flex items-center justify-center border rounded-2xl bg-purple-400 border-gray-500 rounded-full w-full h-12 text-center text-3xl font-bold text-gray-800"
+          >
+            Create an account
+          </h2>
+          <p id="signup-subtitle" class="text-gray-500 mt-2">
+            Please enter your details
+          </p>
+        </div>
+
+        <form>
+          <div class="mb-4">
+            <label
+              for="signup-email"
+              id="signup-label-email"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="signup-email"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your email"
+            />
+          </div>
+
+          <div class="mb-4 relative">
+            <label
+              for="signup-password"
+              id="signup-label-password"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="signup-password"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Create a password"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label
+              for="signup-name"
+              id="signup-label-name"
+              class="block text-sm font-medium text-gray-700 mb-1"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="signup-name"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your full name"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="signup-btn"
+            class="w-full bg-gray-800 text-white py-3 rounded-full font-semibold hover:bg-gray-900 transition duration-300 mt-4"
+          >
+            Sign up
+          </button>
+        </form>
+
+        <p class="text-center text-sm text-gray-500 mt-8">
+          <span id="already-account">Already have an account?</span>
+          <a
+            href="#"
+            id="show-login"
+            class="font-semibold text-blue-600 hover:text-blue-500"
+            >Log in</a
+          >
+        </p>
+      </div>
     </div>
+  </div>
 
-    <script>
-     function goToHomePage() {
-  const email = document.getElementById("login-email").value.trim();
-  const password = document.getElementById("login-password").value.trim();
-
-  if (!email || !password) {
-    alert("Email and password are required!");
-    return;
-  }
-
-  window.location.href = "index.html";
-}
-
-
-        feather.replace();
-
-        const loginForm = document.getElementById('login-form');
-        const signupForm = document.getElementById('signup-form');
-        const showSignupBtn = document.getElementById('show-signup');
-        const showLoginBtn = document.getElementById('show-login');
-
-        const studentBtn = document.getElementById('student-btn');
-        const teacherBtn = document.getElementById('teacher-btn');
-        const studentFields = document.getElementById('student-fields');
-
-        showSignupBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginForm.classList.add('hidden');
-            signupForm.classList.remove('hidden');
-        });
-
-        showLoginBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            signupForm.classList.add('hidden');
-            loginForm.classList.remove('hidden');
-        });
-
-        studentBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            studentBtn.classList.add('bg-gray-800', 'text-white');
-            studentBtn.classList.remove('bg-gray-200', 'text-gray-700');
-            teacherBtn.classList.add('bg-gray-200', 'text-gray-700');
-            teacherBtn.classList.remove('bg-gray-800', 'text-white');
-            studentFields.style.display = 'block';
-        });
-
-        teacherBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            teacherBtn.classList.add('bg-gray-800', 'text-white');
-            teacherBtn.classList.remove('bg-gray-200', 'text-gray-700');
-            studentBtn.classList.add('bg-gray-200', 'text-gray-700');
-            studentBtn.classList.remove('bg-gray-800', 'text-white');
-            studentFields.style.display = 'none';
-        });
-
-        function togglePasswordVisibility(id) {
-            const passwordInput = document.getElementById(id);
-            const icon = passwordInput.nextElementSibling.querySelector('i');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.setAttribute('data-feather', 'eye-off');
-            } else {
-                passwordInput.type = 'password';
-                icon.setAttribute('data-feather', 'eye');
-            }
-            feather.replace();
-        }
-    </script>
+<script src="SCRIPT.JS"></script>
 </body>
 </html>
