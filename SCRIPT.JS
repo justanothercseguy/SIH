@@ -43,7 +43,6 @@
       feather.replace();
     }
 
-    // TRANSLATION STRINGS
     const translations = {
       en: {
         loginTitle: "Welcome back!",
@@ -98,7 +97,7 @@
       },
     };
 
-    // LANGUAGE SWITCHER
+   
     const switcher = document.getElementById("language-switcher");
 
     switcher.addEventListener("change", (e) => {
@@ -128,5 +127,5 @@
       document.getElementById("already-account").innerText = t.alreadyAccount;
     }
 
-    // Default language English
+  
     applyTranslations("en");
