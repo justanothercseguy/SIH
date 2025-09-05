@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kridaksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="shapes-background"></div>
+
+    <header class="hero-header">
+  <!-- Top Navigation -->
+  <div class="top-nav glass-nav">
+    <h1 class="logo">kridaksha</h1>
+    <div class="nav-right">
+      <nav class="main-nav">
+        <a id="link-faq" href="#faq">FAQ</a>
+        <a id="link-about" href="#about">About Us</a>
+        <!-- language selector moved into the top nav beside About Us -->
+        <select id="language-select" aria-label="Language selector" title="Choose language">
+          <option value="en">English</option>
+          <option value="hi">हिन्दी</option>
+          <option value="or">ଓଡ଼ିଆ</option>
+        </select>
+      </nav>
+      <img src="images/avatar.png" alt="User Avatar" class="avatar">
+    </div>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content-area">
+    <div class="hero-text-content">
+      <h2 id="hero_h2">Gamify Your Journey With kridaskha</h2>
+      <p id="hero_p">Learn, play, and achieve — all in one place!</p>
+      <div class="cta-buttons">
+        <button class="cta-btn primary" id="cta_find">Find Subjects</button>
+        <button class="cta-btn secondary" id="cta_demo">Play a Demo</button>
+      </div>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="stat-cards-container">
+      <div class="stat-card stat-subjects">
+        <p class="stat-label" id="stat_label_subjects">STEM Subjects</p>
+        <p class="stat-value" id="stat_value_subjects">6-12th</p>
+      </div>
+      <div class="stat-card stat-games">
+        <p class="stat-label" id="stat_label_games">Upcoming</p>
+        <p class="stat-value" id="stat_value_games">Fun games</p>
+      </div>
+      <div class="stat-card stat-quizzes">
+        <p class="stat-label" id="stat_label_quizzes">Upcoming</p>
+        <p class="stat-value" id="stat_value_quizzes">Quizzes</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <main class="content-sections">
+        <section class="section grade-selection">
+    <h2>Choose Your Path</h2>
+    <div class="grade-cards-container">
+
+        <a href="math.html" class="grade-card">
+    <img src="assets/Math.png" alt="Math">
+</a>
+
+<a href="science.html" class="grade-card">
+    <img src="assets/science.png" alt="Science">
+</a>
+
+<a href="compsci.html" class="grade-card">
+    <img src="assets/compsci.png" alt="Computer Science">
+</a>
+
+
+    </div>
+</section>
+
+
+<section class="section how-it-works">
+    <h2>How Does It Work?</h2>
+    <div class="steps-container">
+
+        <div class="step-card explore-card">
+            <span class="step-icon">🔍</span>
+            <h3>1. Explore</h3>
+            <p>Browse subjects and choose what excites you.</p>
+        </div>
+
+        <div class="step-card play-card">
+            <span class="step-icon">🎮</span>
+            <h3>2. Play</h3>
+            <p>Start interactive mini games and fun quizzes.</p>
+        </div>
+
+        <div class="step-card achieve-card">
+            <span class="step-icon">🏆</span>
+            <h3>4. Achieve</h3>
+            <p>Track progress and climb the leaderboard.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-container">
+    <!-- Left side: Text -->
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        We are a passionate team of students and developers on a mission to make 
+        <strong>learning fun, engaging, and accessible</strong> for everyone. Our platform blends 
+        <em>education and gamification</em> to help students stay motivated and excited about their studies.
+      </p>
+      <p>
+        With interactive lessons, challenges, and rewards, we aim to 
+        <strong>transform the way education is experienced</strong>, especially for young learners.
+      </p>
+    </div>
+
+    <!-- Right side: Image -->
+    <div class="about-image">
+      <img src="assets/about.png" alt="Team STEMify">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-container">
+    
+    <div class="faq-item">
+      <button class="faq-question">What is this platform about?</button>
+      <div class="faq-answer">
+        <p>Our platform is designed to make learning fun by combining education with gamification. Students can explore concepts through interactive lessons, games, and challenges.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Who can use this platform?</button>
+      <div class="faq-answer">
+        <p>Anyone! But we focus on helping school students from grade 6 to 12 understand STEM subjects in an engaging way.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is it free to use?</button>
+      <div class="faq-answer">
+        <p>Yes, the basic features are free. We believe education should be accessible to everyone.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How does gamification help in learning?</button>
+      <div class="faq-answer">
+        <p>Gamification keeps students motivated by rewarding their progress, making lessons feel more like a challenge and less like a task.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact-us" class="contact-section">
+  <h2>Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+    </main>
+
+    <footer class="footer" role="contentinfo" aria-label="Site footer">
+      <div class="footer-inner">
+        <p class="copyright">© 2025 Your Website Name. All rights reserved.</p>
+        <nav class="footer-links" role="navigation" aria-label="Footer links">
+          <a href="#about">About Us</a>
+          <a href="#faq">FAQ's</a>
+          <a href="#contact-us">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
